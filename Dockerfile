@@ -1,5 +1,6 @@
 # Gebruik een Ubuntu-image als basis
-FROM ubuntu:22.04
+# FROM ubuntu:22.04
+FROM ubuntu:latest
 
 # Update de pakketlijst en installeer Apache2, PHP en de MySQL-extensie
 # Add the ondrej/php repository.
