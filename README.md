@@ -52,3 +52,17 @@ Pas onderstaande regels aan met eigen passwords:
 ## Check of alles het doet
 * Open een webbrowser en ga naar `http://127.0.0.1`
 * Klik op de link om naar `http://127.0.0.1:8080` te gaan. Kijk of je kunt inloggen in PHPMyAdmin met gebruikersnaam en wachtwoord zoals je hebt ingesteld.
+
+## PHP readline
+* Als je php vanaf commandline wil starten dan moet je nadat je `docker compose up` hebt gedaan, een interactieve sessie starten met de container waarin php draait. Dat doe je met `docker exec -it apache-php bash`.
+* Je kijkt nu naar de command-prompt van je container. Je kunt bestanden vanaf de commandline starten met php door eerst naar de html-directory te gaan die met je host is gedeeld -> `cd /var/www/html/`
+* Maak in je editor een nieuw bestand aan in de map `html` met de naam `test.php`
+* Gebruik onderstaande code om php interactief van de commandline te kunnen gebruiken.
+```
+<?php
+// test.php
+
+$a = readline("Voer iets in: ");
+echo "Je hebt ingevoerd: " . $a;
+```
+* Voer de code uit in de terminal met: `php test.php`
